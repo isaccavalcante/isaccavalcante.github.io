@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Isac Cavalcante</title>
-    <link>/</link>
+    <link>/blog/</link>
     <description>Recent content on Isac Cavalcante</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>/blog/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>/blog/about/</guid>
       <description>I&amp;rsquo;m an aspiring full stack developer.
 Main experiences: Python, AWS, Docker, Kubernetes, Prometheus, Terraform.</description>
     </item>
     
     <item>
       <title>How to perform an ARP Spoof Attack</title>
-      <link>/posts/arpspoof/</link>
+      <link>/blog/posts/arpspoof/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/arpspoof/</guid>
+      <guid>/blog/posts/arpspoof/</guid>
       <description>ARP Spoofing ARP is a protocol from The TCP/IP model, which stands for Address Resolution Protocol, and the purpose of it is to translate IP address to MAC address and vice versa.
 Each host has an ARP table, with the entries of IP/MAC associations from the other known hosts in the localnetwork. to check the ARP table from your host, run:
 arp -a How ARP protocol works:
@@ -31,10 +31,10 @@ Client sends and ARP request in broadcast:</description>
     
     <item>
       <title>Setting up a Virtual Lab with Virtualbox</title>
-      <link>/posts/virtualbox/</link>
+      <link>/blog/posts/virtualbox/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/virtualbox/</guid>
+      <guid>/blog/posts/virtualbox/</guid>
       <description>Setting up a Virtual Lab with Virtualbox This post shows how to configure an virtual environment for pentesting, researching and experimentation using VirtualBox, a virtualization software that allow us to simulate a real life scenario. We will have the topology described above.
 Configure the VMs with the following specifications by downloading the ISO files.
  Gateway     Configuration Value     OS Ubuntu 18.04   CPU 1   RAM 1GB   Network Interfaces 1 Host-Only, 1 NAT   IP Address 10.</description>

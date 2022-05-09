@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on Isac Cavalcante</title>
-    <link>/series/</link>
+    <link>/blog/series/</link>
     <description>Recent content in Series on Isac Cavalcante</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/series/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/blog/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
