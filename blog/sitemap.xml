@@ -3,40 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://isaccavalcante.github.io/blog/about/</loc>
+    <loc>/blog/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://isaccavalcante.github.io/blog/posts/arpspoof/</loc>
+    <loc>/blog/posts/arpspoof/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://isaccavalcante.github.io/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://isaccavalcante.github.io/blog/posts/</loc>
+    <loc>/blog/posts/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://isaccavalcante.github.io/blog/posts/virtualbox/</loc>
+    <loc>/blog/posts/virtualbox/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://isaccavalcante.github.io/blog/categories/</loc>
+    <loc>/blog/categories/</loc>
   </url>
   
   <url>
-    <loc>https://isaccavalcante.github.io/blog/series/</loc>
+    <loc>/blog/series/</loc>
   </url>
   
   <url>
-    <loc>https://isaccavalcante.github.io/blog/tags/</loc>
+    <loc>/blog/tags/</loc>
   </url>
   
 </urlset>
