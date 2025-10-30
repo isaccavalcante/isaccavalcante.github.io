@@ -412,6 +412,9 @@
                 <h1>Hi, I'm Isac</h1>
                 <p>Thanks for deploying my website! That's what I do: I help people deploy stuff.</p>
                 <p>I enable developers to work efficiently and ship with confidence, so you could call me a DevOps engineer. I configure and standardize infrastructure and workflows that scale across teams, so you could call me a Platform engineer. I make sure systems are reliable, monitored, and resilient, so you could call me an SRE. Titles aside, I just enjoy building and monitoring systems.</p>
+
+                <p>I'm currently working @ <a href="https://www.peoplestrust.com" target="_blank">Peoples's Group</a>.</p>
+
                 <p>In my free time I also run a <a href="https://www.instagram.com/eastcoastcoffeebar", target="_blank">small coffee shop</a> with my wife.</p>
                 
                 <p>Some of the tools I have experience with:</p>
@@ -482,13 +485,13 @@
 
         const commands = [
             { text: '$ ˆC', instant: true },   
-            { text: '$ terraform init', delay: 90 },
+            { text: '$ terraform init', delay: 50 },
             { text: '\nInitializing the backend...', instant: true},
             { text: '\nInitializing provider plugins...', instant: true},
             { text: '\n- Installing hashicorp/aws v6.18.0...', instant: true},
             { text: '\n- Installed hashicorp/aws v6.18.0 (signed by HashiCorp)', instant: true, class: 'success' },
             { text: '\n\nTerraform has been successfully initialized!', instant: true, class: 'success' },
-            { text: '\n\n$ terraform apply', delay: 90 },
+            { text: '\n\n$ terraform apply', delay: 50 },
             { text: '\nRefreshing Terraform state in-memory prior to plan...', instant: true },
             { text: '\nAn execution plan has been generated:', instant: true  },
             { text: '\nTerraform will perform the following actions:', instant: true },
@@ -496,7 +499,6 @@
             { text: '\n  + resource "aws_instance" "portfolio_website" {', instant: true , class: 'resource' },
             { text: '\n      + instance_id   = (known after apply)', instant: true , class: 'resource' },
             { text: '\n      + instance_type = "t3.micro"', instant: true , class: 'resource' },
-            { text: '\n      + public_ip     = (known after apply)', instant: true , class: 'resource' },
             { text: '\n    }', instant: true , class: 'resource' },
             { text: '\n\nPlan: 1 to add, 0 to change, 0 to destroy.', instant: true  },
             { text: '\n\nDo you want to perform these actions?', instant: true  },
@@ -617,7 +619,6 @@ function continueAfterInput() {
         { text: '\n\nApply complete! Resources: 1 added, 0 changed, 0 destroyed.', delay: 30, class: 'success' },
         { text: '\n\nOutputs:', delay: 30 },
         { text: '\ninstance_id = "i-0abcd1234ef567890"', delay: 30 },
-        { text: '\npublic_ip   = "3.91.214.25"', delay: 30 },
         { text: '\n\n✓ Portfolio successfully deployed!', delay: 30, class: 'success' }
     ];
 
