@@ -356,7 +356,7 @@
                 padding: 15px;
                 font-size: 14px;
                 height: 400px;
-                line-height: 0.5;
+                line-height: 0.8;
             }
 
             #user-input {
@@ -367,28 +367,35 @@
                 padding: 40px 20px;
             }
 
-            .tech-icons {
-                gap: 15px;
-            }
+.tech-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* two rows of 3 icons */
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+    max-width: 400px; /* optional, centers and keeps tidy */
+    margin: 0 auto;
+}
 
-            .tech-icon {
-                width: 40px;
-                height: 40px;
-            }
+.tech-icon {
+    width: 40px;
+    height: 40px;
+}
 
-            .projects {
-                grid-template-columns: 1fr;
-            }
+.projects {
+    grid-template-columns: 1fr;
+}
 
-            .button-group {
-                flex-direction: column;
-                align-items: center;
-            }
+.button-group {
+    flex-direction: column;
+    align-items: center;
+}
 
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
+.btn {
+    width: 100%;
+    max-width: 300px;
+}
+
         }
     </style>
 </head>
@@ -418,6 +425,8 @@
                 <p>In my free time I also run a <a href="https://www.instagram.com/eastcoastcoffeebar", target="_blank">small coffee shop</a> with my wife.</p>
                 
                 <p>Some of the tools I have experience with:</p>
+                <br/>
+
                 <div class="tech-icons">
                     <div class="tech-icon" title="Terraform">
                         <img src="https://cdn.simpleicons.org/terraform" alt="Terraform">
