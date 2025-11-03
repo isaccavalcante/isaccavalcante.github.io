@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isac Cavalcante - DevOps Engineer</title>
+    <title>Isac Cavalcante's Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -98,8 +98,16 @@
             color: #4ade80;
         }
 
-        .resource {
+        .command {
             color: #a78bfa;
+        }
+
+        .create .symbol {
+            color: #4ade80;
+        }
+
+        .destroy .symbol {
+            color: #ef4444;
         }
 
         .cursor {
@@ -421,32 +429,31 @@
                 <p>I enable developers to work efficiently and ship with confidence, so you could call me a DevOps engineer. I configure and standardize infrastructure and workflows that scale across teams, so you could call me a Platform engineer. I make sure systems are reliable, monitored, and resilient, so you could call me an SRE. Titles aside, I just enjoy building and monitoring systems.</p>
 
                 <p>I'm currently working for <a href="http://torc.dev/" target="_blank">Torc</a>.</p>
-
-                <p>In my free time I also run a <a href="https://www.instagram.com/eastcoastcoffeebar", target="_blank">small coffee shop</a> with my wife.</p>
                 
                 <p>Some of the tools I have experience with:</p>
                 <br/>
 
-                <div class="tech-icons">
-                    <div class="tech-icon" title="Terraform">
-                        <img src="https://cdn.simpleicons.org/terraform" alt="Terraform">
-                    </div>
-                    <div class="tech-icon" title="Kubernetes">
-                        <img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes">
-                    </div>
-                    <div class="tech-icon" title="Prometheus">
-                        <img src="https://cdn.simpleicons.org/prometheus" alt="Prometheus">
-                    </div>
-                    <div class="tech-icon" title="Grafana">
-                        <img src="https://cdn.simpleicons.org/grafana" alt="Grafana">
-                    </div>
-                    <div class="tech-icon" title="GitHub Actions">
-                        <img src="https://cdn.simpleicons.org/githubactions" alt="GitHub Actions">
-                    </div>
-                    <div class="tech-icon" title="Python">
-                        <img src="https://cdn.simpleicons.org/python" alt="Python">
-                    </div>
-                </div>
+<div class="tech-icons">
+    <a class="tech-icon" href="https://www.terraform.io/" target="_blank" data-tooltip="Terraform">
+        <img src="https://cdn.simpleicons.org/terraform" alt="Terraform">
+    </a>
+    <a class="tech-icon" href="https://kubernetes.io/" target="_blank" data-tooltip="Kubernetes">
+        <img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes">
+    </a>
+    <a class="tech-icon" href="https://prometheus.io/" target="_blank" data-tooltip="Prometheus">
+        <img src="https://cdn.simpleicons.org/prometheus" alt="Prometheus">
+    </a>
+    <a class="tech-icon" href="https://grafana.com/" target="_blank" data-tooltip="Grafana">
+        <img src="https://cdn.simpleicons.org/grafana" alt="Grafana">
+    </a>
+    <a class="tech-icon" href="https://github.com/features/actions" target="_blank" data-tooltip="GitHub Actions">
+        <img src="https://cdn.simpleicons.org/githubactions" alt="GitHub Actions">
+    </a>
+    <a class="tech-icon" href="https://www.python.org/" target="_blank" data-tooltip="Python">
+        <img src="https://cdn.simpleicons.org/python" alt="Python">
+    </a>
+</div>
+
             </section>
 
             <section class="section">
@@ -459,12 +466,12 @@
 
                     <div class="project-card" onclick="window.open('https://github.com/isaccavalcante/terraform-aws-sparkday', '_blank')">
                         <h3>👨🏻‍💻 Terraform and Terratest Infra as Code</h3>
-                        <p>Codebase for Terraform live keynote @ <a href="https://www.hp.com/" target="_blank">HP</a> (2019) </p>
+                        <p>Codebase for Terraform live keynote @ <a href="https://www.hp.com/" target="_blank">HP</a> (2019)</p>
                     </div>
 
                     <div class="project-card" onclick="window.open('https://github.com/isaccavalcante/take-home-terraform-live-infra', '_blank')">
                         <h3>📝 Terraform and ELK configuration</h3>
-                        <p>Take-home assignment for DevOps Engineer @ <a href="https://pagar.me/" target="_blank">Pagar.me</a>(2020)</p>
+                        <p>Take-home assignment for DevOps Engineer @ <a href="https://pagar.me/" target="_blank">Pagar.me</a> (2020)</p>
                     </div>
     
                 </div>
@@ -480,7 +487,7 @@
         </div>
 
         <footer>
-            This website does not use cookies 🍪, just coffee.
+            This website doesn't cookies 🍪, just coffee.
         </footer>
     </div>
 
@@ -493,22 +500,23 @@
         const portfolio = document.getElementById('portfolio');
 
         const commands = [
-            { text: '$ ˆC', instant: true },   
-            { text: '$ terraform init', delay: 50 },
+            { text: '$ ˆC', class: "command", instant: true },   
+            { text: '$ terraform init', class: "command", delay: 50 },
             { text: '\nInitializing the backend...', instant: true},
             { text: '\nInitializing provider plugins...', instant: true},
             { text: '\n- Installing hashicorp/aws v6.18.0...', instant: true},
-            { text: '\n- Installed hashicorp/aws v6.18.0 (signed by HashiCorp)', instant: true, class: 'success' },
+            { text: '\n- Installed hashicorp/aws v6.18.0 (signed by HashiCorp)', instant: true },
             { text: '\n\nTerraform has been successfully initialized!', instant: true, class: 'success' },
-            { text: '\n\n$ terraform apply', delay: 50 },
-            { text: '\nRefreshing Terraform state in-memory prior to plan...', instant: true },
-            { text: '\nAn execution plan has been generated:', instant: true  },
+            { text: '\n\n$ terraform apply', class: "command", delay: 50 },
+            { text: '\nTerraform used the selected providers to generate the following execution', instant: true},      
+            { text: '\nplan. Resource actions are indicated with the following symbols:', instant: true},
+            { text: '\n  + create', instant: true , class: 'create', splitSymbol: true },            
             { text: '\nTerraform will perform the following actions:', instant: true },
-            { text: '\n\n  # aws_instance.portfolio_website will be created', instant: true , class: 'resource' },
-            { text: '\n  + resource "aws_instance" "portfolio_website" {', instant: true , class: 'resource' },
-            { text: '\n      + instance_id   = (known after apply)', instant: true , class: 'resource' },
-            { text: '\n      + instance_type = "t3.micro"', instant: true , class: 'resource' },
-            { text: '\n    }', instant: true , class: 'resource' },
+            { text: '\n\n  # aws_instance.portfolio_website will be created', instant: true },
+            { text: '\n  + resource "aws_instance" "portfolio_website" {', instant: true , class: 'create', splitSymbol: true },
+            { text: '\n      + instance_id   = (known after apply)', instant: true , class: 'create', splitSymbol: true },
+            { text: '\n      + instance_type = "t3.micro"', instant: true , class: 'create', splitSymbol: true },
+            { text: '\n    }', instant: true },
             { text: '\n\nPlan: 1 to add, 0 to change, 0 to destroy.', instant: true  },
             { text: '\n\nDo you want to perform these actions?', instant: true  },
             { text: '\n  Terraform will perform the actions described above.', instant: true },
@@ -589,7 +597,36 @@ function typeCommand() {
         const line = document.createElement('div');
         line.className = 'terminal-line';
         if (command.class) line.classList.add(command.class);
-        line.textContent = command.text;
+        
+        // Handle create/destroy classes with symbol splitting
+        if (command.splitSymbol && (command.class === 'create' || command.class === 'destroy')) {
+            // Find the position of + or - symbol
+            const symbolMatch = command.text.match(/[+\-]/);
+            if (symbolMatch) {
+                const symbolIndex = symbolMatch.index;
+                const beforeSymbol = command.text.substring(0, symbolIndex);
+                const symbol = command.text.charAt(symbolIndex);
+                const afterSymbol = command.text.substring(symbolIndex + 1);
+                
+                if (beforeSymbol) {
+                    line.appendChild(document.createTextNode(beforeSymbol));
+                }
+                
+                const symbolSpan = document.createElement('span');
+                symbolSpan.className = 'symbol';
+                symbolSpan.textContent = symbol;
+                line.appendChild(symbolSpan);
+                
+                if (afterSymbol) {
+                    line.appendChild(document.createTextNode(afterSymbol));
+                }
+            } else {
+                line.textContent = command.text;
+            }
+        } else {
+            line.textContent = command.text;
+        }
+        
         terminalOutput.appendChild(line);
         scrollTerminalToInput();
         currentCommand++;
@@ -622,7 +659,7 @@ function typeCommand() {
 
 function continueAfterInput() {
     const deployCommands = [
-        { text: '\naws_instance.portfolio_website: Creating...', delay: 30, class: 'resource' },
+        { text: '\naws_instance.portfolio_website: Creating...', delay: 30, class: 'command' },
         { text: '\naws_instance.portfolio_website: Still creating... [10s elapsed]', delay: 30 },
         { text: '\naws_instance.portfolio_website: Creation complete after 12s', delay: 30, class: 'success' },
         { text: '\n\nApply complete! Resources: 1 added, 0 changed, 0 destroyed.', delay: 30, class: 'success' },
