@@ -346,6 +346,32 @@
             box-shadow: 0 10px 25px rgba(94, 59, 179, 0.4);
         }
 
+        .btn-danger {
+            background: transparent;
+            color: #ef4444;
+            border: 2px solid #ef4444;
+        }
+
+        .btn-danger:hover {
+            background: #ef4444;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+        }
+
+        .destroy-section {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(94, 59, 179, 0.2);
+            margin-top: 40px;
+        }
+
+        .destroy-section h2 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-bottom: 20px;
+            color: #ef4444;
+        }
+
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -375,35 +401,34 @@
                 padding: 40px 20px;
             }
 
-.tech-icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* two rows of 3 icons */
-    gap: 15px;
-    justify-items: center;
-    align-items: center;
-    max-width: 400px; /* optional, centers and keeps tidy */
-    margin: 0 auto;
-}
+            .tech-icons {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                justify-items: center;
+                align-items: center;
+                max-width: 400px;
+                margin: 0 auto;
+            }
 
-.tech-icon {
-    width: 40px;
-    height: 40px;
-}
+            .tech-icon {
+                width: 40px;
+                height: 40px;
+            }
 
-.projects {
-    grid-template-columns: 1fr;
-}
+            .projects {
+                grid-template-columns: 1fr;
+            }
 
-.button-group {
-    flex-direction: column;
-    align-items: center;
-}
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
 
-.btn {
-    width: 100%;
-    max-width: 300px;
-}
-
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -433,27 +458,26 @@
                 <p>Some of the tools I have experience with:</p>
                 <br/>
 
-<div class="tech-icons">
-    <a class="tech-icon" href="https://www.terraform.io/" target="_blank" data-tooltip="Terraform">
-        <img src="https://cdn.simpleicons.org/terraform" alt="Terraform">
-    </a>
-    <a class="tech-icon" href="https://kubernetes.io/" target="_blank" data-tooltip="Kubernetes">
-        <img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes">
-    </a>
-    <a class="tech-icon" href="https://prometheus.io/" target="_blank" data-tooltip="Prometheus">
-        <img src="https://cdn.simpleicons.org/prometheus" alt="Prometheus">
-    </a>
-    <a class="tech-icon" href="https://grafana.com/" target="_blank" data-tooltip="Grafana">
-        <img src="https://cdn.simpleicons.org/grafana" alt="Grafana">
-    </a>
-    <a class="tech-icon" href="https://github.com/features/actions" target="_blank" data-tooltip="GitHub Actions">
-        <img src="https://cdn.simpleicons.org/githubactions" alt="GitHub Actions">
-    </a>
-    <a class="tech-icon" href="https://www.python.org/" target="_blank" data-tooltip="Python">
-        <img src="https://cdn.simpleicons.org/python" alt="Python">
-    </a>
-</div>
-
+                <div class="tech-icons">
+                    <a class="tech-icon" href="https://www.terraform.io/" target="_blank" data-tooltip="Terraform">
+                        <img src="https://cdn.simpleicons.org/terraform" alt="Terraform">
+                    </a>
+                    <a class="tech-icon" href="https://kubernetes.io/" target="_blank" data-tooltip="Kubernetes">
+                        <img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes">
+                    </a>
+                    <a class="tech-icon" href="https://prometheus.io/" target="_blank" data-tooltip="Prometheus">
+                        <img src="https://cdn.simpleicons.org/prometheus" alt="Prometheus">
+                    </a>
+                    <a class="tech-icon" href="https://grafana.com/" target="_blank" data-tooltip="Grafana">
+                        <img src="https://cdn.simpleicons.org/grafana" alt="Grafana">
+                    </a>
+                    <a class="tech-icon" href="https://github.com/features/actions" target="_blank" data-tooltip="GitHub Actions">
+                        <img src="https://cdn.simpleicons.org/githubactions" alt="GitHub Actions">
+                    </a>
+                    <a class="tech-icon" href="https://www.python.org/" target="_blank" data-tooltip="Python">
+                        <img src="https://cdn.simpleicons.org/python" alt="Python">
+                    </a>
+                </div>
             </section>
 
             <section class="section">
@@ -473,15 +497,21 @@
                         <h3>📝 Terraform and ELK configuration</h3>
                         <p>Take-home assignment for DevOps Engineer @ <a href="https://pagar.me/" target="_blank">Pagar.me</a> (2020)</p>
                     </div>
-    
                 </div>
             </section>
 
             <section class="cta">
-                <h2>Want to know more? </h2>
+                <h2>Want to know more?</h2>
                 <div class="button-group">
                     <a href="/Isac_Cavalcante_DevOps_Platform_SRE.pdf" class="btn btn-primary" download>Download CV</a>
                     <a href="https://www.linkedin.com/in/isaccavalcante/" class="btn btn-secondary" target="_blank">Hire Me</a>
+                </div>
+            </section>
+
+            <section class="destroy-section">
+                <h2>Danger Zone</h2>
+                <div class="button-group">
+                    <button class="btn btn-danger" onclick="initiateDestroy()">Destroy This Website</button>
                 </div>
             </section>
         </div>
@@ -498,6 +528,9 @@
         const terminalOutput = document.getElementById('terminal-output');
         const terminalContainer = document.getElementById('terminal-container');
         const portfolio = document.getElementById('portfolio');
+
+        // Check localStorage on page load
+        const isApplied = localStorage.getItem('portfolioApplied') === 'true';
 
         const commands = [
             { text: '$ ˆC', class: "command", instant: true },   
@@ -526,197 +559,210 @@
 
         let currentCommand = 0;
         let currentChar = 0;
+        let isDestroyMode = false;
 
-function typeCommand() {
-    if (currentCommand >= commands.length) return;
+        // Initialize the page based on localStorage
+        if (isApplied) {
+            // Skip terminal, go straight to portfolio
+            terminalContainer.style.display = 'none';
+            portfolio.style.display = 'block';
+        } else {
+            // Start terminal animation
+            typeCommand();
+        }
 
-    const command = commands[currentCommand];
-    
-    if (command.waitForInput) {
-        const line = document.createElement('span');
-        line.className = 'terminal-line';
-        line.textContent = command.text;
-        
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.id = 'user-input';
-        input.autocomplete = 'off';
-        
-        const wrapper = document.createElement('div');
-        wrapper.className = 'terminal-line';
-        wrapper.appendChild(line);
-        wrapper.appendChild(input);
-        
-        terminalOutput.appendChild(wrapper);
-        scrollTerminalToInput();
-        input.focus();
-        
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const value = input.value.trim().toLowerCase();
-                if (value === 'yes') {
-                    input.disabled = true;
-                    input.style.color = '#4ade80';
-                    currentCommand++;
-                    setTimeout(() => continueAfterInput(), 500 * TYPING_SPEED);
-                } else {
-                    input.value = '';
-                    const errorLine = document.createElement('div');
-                    errorLine.className = 'terminal-line';
-                    errorLine.style.color = '#ef4444';
-                    errorLine.textContent = '\n\nOnly \'yes\' will be accepted to approve.\n\n  Enter a value: ';
-                    
-                    const newInput = document.createElement('input');
-                    newInput.type = 'text';
-                    newInput.id = 'user-input';
-                    newInput.autocomplete = 'off';
-                    
-                    const newPrompt = document.createElement('span');
-                    newPrompt.textContent = '  Enter a value: ';
-                    
-                    const newWrapper = document.createElement('div');
-                    newWrapper.className = 'terminal-line';
-                    newWrapper.appendChild(newPrompt);
-                    newWrapper.appendChild(newInput);
-                    
-                    terminalOutput.appendChild(errorLine);
-                    terminalOutput.appendChild(newWrapper);
-                    scrollTerminalToInput();
-                    newInput.focus();
-                    
-                    newInput.addEventListener('keypress', arguments.callee);
-                }
-            }
-        });
-        
-        return;
-    }
+        function typeCommand() {
+            if (currentCommand >= commands.length) return;
 
-    // INSTANT DISPLAY: If command has instant: true, show it all at once
-    if (command.instant === true) {
-        const line = document.createElement('div');
-        line.className = 'terminal-line';
-        if (command.class) line.classList.add(command.class);
-        
-        // Handle create/destroy classes with symbol splitting
-        if (command.splitSymbol && (command.class === 'create' || command.class === 'destroy')) {
-            // Find the position of + or - symbol
-            const symbolMatch = command.text.match(/[+\-]/);
-            if (symbolMatch) {
-                const symbolIndex = symbolMatch.index;
-                const beforeSymbol = command.text.substring(0, symbolIndex);
-                const symbol = command.text.charAt(symbolIndex);
-                const afterSymbol = command.text.substring(symbolIndex + 1);
-                
-                if (beforeSymbol) {
-                    line.appendChild(document.createTextNode(beforeSymbol));
-                }
-                
-                const symbolSpan = document.createElement('span');
-                symbolSpan.className = 'symbol';
-                symbolSpan.textContent = symbol;
-                line.appendChild(symbolSpan);
-                
-                if (afterSymbol) {
-                    line.appendChild(document.createTextNode(afterSymbol));
-                }
-            } else {
+            const command = commands[currentCommand];
+            
+            if (command.waitForInput) {
+                const line = document.createElement('span');
+                line.className = 'terminal-line';
                 line.textContent = command.text;
+                
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.id = 'user-input';
+                input.autocomplete = 'off';
+                
+                const wrapper = document.createElement('div');
+                wrapper.className = 'terminal-line';
+                wrapper.appendChild(line);
+                wrapper.appendChild(input);
+                
+                terminalOutput.appendChild(wrapper);
+                scrollTerminalToInput();
+                input.focus();
+                
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        const value = input.value.trim().toLowerCase();
+                        if (value === 'yes') {
+                            input.disabled = true;
+                            input.style.color = '#4ade80';
+                            currentCommand++;
+                            setTimeout(() => continueAfterInput(), 500 * TYPING_SPEED);
+                        } else {
+                            input.value = '';
+                            const errorLine = document.createElement('div');
+                            errorLine.className = 'terminal-line';
+                            errorLine.style.color = '#ef4444';
+                            errorLine.textContent = '\n\nOnly \'yes\' will be accepted to approve.\n\n  Enter a value: ';
+                            
+                            const newInput = document.createElement('input');
+                            newInput.type = 'text';
+                            newInput.id = 'user-input';
+                            newInput.autocomplete = 'off';
+                            
+                            const newPrompt = document.createElement('span');
+                            newPrompt.textContent = '  Enter a value: ';
+                            
+                            const newWrapper = document.createElement('div');
+                            newWrapper.className = 'terminal-line';
+                            newWrapper.appendChild(newPrompt);
+                            newWrapper.appendChild(newInput);
+                            
+                            terminalOutput.appendChild(errorLine);
+                            terminalOutput.appendChild(newWrapper);
+                            scrollTerminalToInput();
+                            newInput.focus();
+                            
+                            newInput.addEventListener('keypress', arguments.callee);
+                        }
+                    }
+                });
+                
+                return;
             }
-        } else {
-            line.textContent = command.text;
-        }
-        
-        terminalOutput.appendChild(line);
-        scrollTerminalToInput();
-        currentCommand++;
-        currentChar = 0;
-        setTimeout(typeCommand, 100 * TYPING_SPEED);
-        return;
-    }
 
-    if (currentChar === 0) {
-        const line = document.createElement('div');
-        line.className = 'terminal-line';
-        if (command.class) line.classList.add(command.class);
-        line.id = `line-${currentCommand}`;
-        terminalOutput.appendChild(line);
-    }
+            // INSTANT DISPLAY: If command has instant: true, show it all at once
+            if (command.instant === true) {
+                const line = document.createElement('div');
+                line.className = 'terminal-line';
+                if (command.class) line.classList.add(command.class);
+                
+                // Handle create/destroy classes with symbol splitting
+                if (command.splitSymbol && (command.class === 'create' || command.class === 'destroy')) {
+                    // Find the position of + or - symbol
+                    const symbolMatch = command.text.match(/[+\-]/);
+                    if (symbolMatch) {
+                        const symbolIndex = symbolMatch.index;
+                        const beforeSymbol = command.text.substring(0, symbolIndex);
+                        const symbol = command.text.charAt(symbolIndex);
+                        const afterSymbol = command.text.substring(symbolIndex + 1);
+                        
+                        if (beforeSymbol) {
+                            line.appendChild(document.createTextNode(beforeSymbol));
+                        }
+                        
+                        const symbolSpan = document.createElement('span');
+                        symbolSpan.className = 'symbol';
+                        symbolSpan.textContent = symbol;
+                        line.appendChild(symbolSpan);
+                        
+                        if (afterSymbol) {
+                            line.appendChild(document.createTextNode(afterSymbol));
+                        }
+                    } else {
+                        line.textContent = command.text;
+                    }
+                } else {
+                    line.textContent = command.text;
+                }
+                
+                terminalOutput.appendChild(line);
+                scrollTerminalToInput();
+                currentCommand++;
+                currentChar = 0;
+                setTimeout(typeCommand, 100 * TYPING_SPEED);
+                return;
+            }
 
-    const line = document.getElementById(`line-${currentCommand}`);
-    
-    if (currentChar < command.text.length) {
-        line.textContent += command.text[currentChar];
-        currentChar++;
-        scrollTerminalToInput();
-        setTimeout(typeCommand, command.delay * TYPING_SPEED);
-    } else {
-        currentChar = 0;
-        currentCommand++;
-        setTimeout(typeCommand, 300 * TYPING_SPEED);
-    }
-}
+            if (currentChar === 0) {
+                const line = document.createElement('div');
+                line.className = 'terminal-line';
+                if (command.class) line.classList.add(command.class);
+                line.id = `line-${currentCommand}`;
+                terminalOutput.appendChild(line);
+            }
 
-function continueAfterInput() {
-    const deployCommands = [
-        { text: '\naws_instance.portfolio_website: Creating...', delay: 30, class: 'command' },
-        { text: '\naws_instance.portfolio_website: Still creating... [10s elapsed]', delay: 30 },
-        { text: '\naws_instance.portfolio_website: Creation complete after 12s', delay: 30, class: 'success' },
-        { text: '\n\nApply complete! Resources: 1 added, 0 changed, 0 destroyed.', delay: 30, class: 'success' },
-        { text: '\n\nOutputs:', delay: 30 },
-        { text: '\ninstance_id = "i-0abcd1234ef567890"', delay: 30 },
-        { text: '\n\n✓ Portfolio successfully deployed!', delay: 30, class: 'success' }
-    ];
-
-    let deployIndex = 0;
-    let deployChar = 0;
-
-    function typeDeployCommand() {
-        if (deployIndex >= deployCommands.length) {
-            setTimeout(showPortfolio, 1000 * TYPING_SPEED);
-            return;
-        }
-
-        const command = deployCommands[deployIndex];
-        
-        // INSTANT DISPLAY: If command has instant: true, show it all at once
-        if (command.instant === true) {
-            const line = document.createElement('div');
-            line.className = 'terminal-line';
-            if (command.class) line.classList.add(command.class);
-            line.textContent = command.text;
-            terminalOutput.appendChild(line);
-            scrollTerminalToInput();
-            deployIndex++;
-            deployChar = 0;
-            setTimeout(typeDeployCommand, 100 * TYPING_SPEED);
-            return;
-        }
-        
-        if (deployChar === 0) {
-            const line = document.createElement('div');
-            line.className = 'terminal-line';
-            if (command.class) line.classList.add(command.class);
-            line.id = `deploy-line-${deployIndex}`;
-            terminalOutput.appendChild(line);
+            const line = document.getElementById(`line-${currentCommand}`);
+            
+            if (currentChar < command.text.length) {
+                line.textContent += command.text[currentChar];
+                currentChar++;
+                scrollTerminalToInput();
+                setTimeout(typeCommand, command.delay * TYPING_SPEED);
+            } else {
+                currentChar = 0;
+                currentCommand++;
+                setTimeout(typeCommand, 300 * TYPING_SPEED);
+            }
         }
 
-        const line = document.getElementById(`deploy-line-${deployIndex}`);
-        
-        if (deployChar < command.text.length) {
-            line.textContent += command.text[deployChar];
-            deployChar++;
-            scrollTerminalToInput();
-            setTimeout(typeDeployCommand, command.delay * TYPING_SPEED);
-        } else {
-            deployChar = 0;
-            deployIndex++;
-            setTimeout(typeDeployCommand, 300 * TYPING_SPEED);
-        }
-    }
+        function continueAfterInput() {
+            const deployCommands = [
+                { text: '\naws_instance.portfolio_website: Creating...', delay: 30, class: 'command' },
+                { text: '\naws_instance.portfolio_website: Still creating... [10s elapsed]', delay: 30 },
+                { text: '\naws_instance.portfolio_website: Creation complete after 12s', delay: 30, class: 'success' },
+                { text: '\n\nApply complete! Resources: 1 added, 0 changed, 0 destroyed.', delay: 30, class: 'success' },
+                { text: '\n\nOutputs:', delay: 30 },
+                { text: '\ninstance_id = "i-0abcd1234ef567890"', delay: 30 },
+                { text: '\n\n✓ Portfolio successfully deployed!', delay: 30, class: 'success' }
+            ];
 
-    typeDeployCommand();
-}
+            let deployIndex = 0;
+            let deployChar = 0;
+
+            function typeDeployCommand() {
+                if (deployIndex >= deployCommands.length) {
+                    // Save to localStorage that the site has been applied
+                    localStorage.setItem('portfolioApplied', 'true');
+                    setTimeout(showPortfolio, 1000 * TYPING_SPEED);
+                    return;
+                }
+
+                const command = deployCommands[deployIndex];
+                
+                // INSTANT DISPLAY: If command has instant: true, show it all at once
+                if (command.instant === true) {
+                    const line = document.createElement('div');
+                    line.className = 'terminal-line';
+                    if (command.class) line.classList.add(command.class);
+                    line.textContent = command.text;
+                    terminalOutput.appendChild(line);
+                    scrollTerminalToInput();
+                    deployIndex++;
+                    deployChar = 0;
+                    setTimeout(typeDeployCommand, 100 * TYPING_SPEED);
+                    return;
+                }
+                
+                if (deployChar === 0) {
+                    const line = document.createElement('div');
+                    line.className = 'terminal-line';
+                    if (command.class) line.classList.add(command.class);
+                    line.id = `deploy-line-${deployIndex}`;
+                    terminalOutput.appendChild(line);
+                }
+
+                const line = document.getElementById(`deploy-line-${deployIndex}`);
+                
+                if (deployChar < command.text.length) {
+                    line.textContent += command.text[deployChar];
+                    deployChar++;
+                    scrollTerminalToInput();
+                    setTimeout(typeDeployCommand, command.delay * TYPING_SPEED);
+                } else {
+                    deployChar = 0;
+                    deployIndex++;
+                    setTimeout(typeDeployCommand, 300 * TYPING_SPEED);
+                }
+            }
+
+            typeDeployCommand();
+        }
 
         // Smart scroll function to keep input visible in middle of terminal
         function scrollTerminalToInput() {
@@ -732,8 +778,230 @@ function continueAfterInput() {
             window.scrollTo(0, 0);
         }
 
-        // Start the terminal animation
-        typeCommand();
+        // DESTROY FUNCTIONALITY
+        function initiateDestroy() {
+            isDestroyMode = true;
+            portfolio.style.display = 'none';
+            terminalContainer.style.display = 'flex';
+            terminalOutput.innerHTML = '';
+            
+            runDestroySequence();
+        }
+
+        function runDestroySequence() {
+            const destroyCommands = [
+                { text: '$ terraform destroy', class: "command", delay: 50 },
+                { text: '\nTerraform used the selected providers to generate the following execution', instant: true},      
+                { text: '\nplan. Resource actions are indicated with the following symbols:', instant: true},
+                { text: '\n  - destroy', instant: true, class: 'destroy', splitSymbol: true },            
+                { text: '\nTerraform will perform the following actions:', instant: true },
+                { text: '\n\n  # aws_instance.portfolio_website will be destroyed', instant: true },
+                { text: '\n  - resource "aws_instance" "portfolio_website" {', instant: true, class: 'destroy', splitSymbol: true },
+                { text: '\n      - instance_id   = "i-0abcd1234ef567890"', instant: true, class: 'destroy', splitSymbol: true },
+                { text: '\n      - instance_type = "t3.micro"', instant: true, class: 'destroy', splitSymbol: true },
+                { text: '\n    }', instant: true },
+                { text: '\n\nPlan: 0 to add, 0 to change, 1 to destroy.', instant: true  },
+                { text: '\n\nDo you really want to destroy all resources?', instant: true  },
+                { text: '\n  Terraform will destroy all your managed infrastructure, as shown above.', instant: true },
+                { text: '\n  There is no undo. Only \'yes\' will be accepted to confirm.', instant: true  },
+                { text: '\n\n  Enter a value: ', instant: true, waitForDestroyInput: true }
+            ];
+
+            let destroyIndex = 0;
+            let destroyChar = 0;
+
+            function typeDestroyCommand() {
+                if (destroyIndex >= destroyCommands.length) return;
+
+                const command = destroyCommands[destroyIndex];
+                
+                if (command.waitForDestroyInput) {
+                    const line = document.createElement('span');
+                    line.className = 'terminal-line';
+                    line.textContent = command.text;
+                    
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.id = 'user-input';
+                    input.autocomplete = 'off';
+                    
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'terminal-line';
+                    wrapper.appendChild(line);
+                    wrapper.appendChild(input);
+                    
+                    terminalOutput.appendChild(wrapper);
+                    scrollTerminalToInput();
+                    input.focus();
+                    
+                    input.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') {
+                            const value = input.value.trim().toLowerCase();
+                            if (value === 'yes') {
+                                input.disabled = true;
+                                input.style.color = '#ef4444';
+                                setTimeout(() => executeDestroy(), 500 * TYPING_SPEED);
+                            } else {
+                                // Show error and create new input prompt
+                                input.value = '';
+                                const errorLine = document.createElement('div');
+                                errorLine.className = 'terminal-line';
+                                errorLine.style.color = '#ef4444';
+                                errorLine.textContent = '\n\nOnly \'yes\' will be accepted to confirm.\n\n  Enter a value: ';
+                                
+                                const newInput = document.createElement('input');
+                                newInput.type = 'text';
+                                newInput.id = 'user-input';
+                                newInput.autocomplete = 'off';
+                                
+                                const newPrompt = document.createElement('span');
+                                newPrompt.textContent = '  Enter a value: ';
+                                
+                                const newWrapper = document.createElement('div');
+                                newWrapper.className = 'terminal-line';
+                                newWrapper.appendChild(newPrompt);
+                                newWrapper.appendChild(newInput);
+                                
+                                terminalOutput.appendChild(errorLine);
+                                terminalOutput.appendChild(newWrapper);
+                                scrollTerminalToInput();
+                                newInput.focus();
+                                
+                                newInput.addEventListener('keypress', arguments.callee);
+                            }
+                        }
+                    });
+                    
+                    return;
+                }
+
+                if (command.instant === true) {
+                    const line = document.createElement('div');
+                    line.className = 'terminal-line';
+                    if (command.class) line.classList.add(command.class);
+                    
+                    if (command.splitSymbol && (command.class === 'create' || command.class === 'destroy')) {
+                        const symbolMatch = command.text.match(/[+\-]/);
+                        if (symbolMatch) {
+                            const symbolIndex = symbolMatch.index;
+                            const beforeSymbol = command.text.substring(0, symbolIndex);
+                            const symbol = command.text.charAt(symbolIndex);
+                            const afterSymbol = command.text.substring(symbolIndex + 1);
+                            
+                            if (beforeSymbol) {
+                                line.appendChild(document.createTextNode(beforeSymbol));
+                            }
+                            
+                            const symbolSpan = document.createElement('span');
+                            symbolSpan.className = 'symbol';
+                            symbolSpan.textContent = symbol;
+                            line.appendChild(symbolSpan);
+                            
+                            if (afterSymbol) {
+                                line.appendChild(document.createTextNode(afterSymbol));
+                            }
+                        } else {
+                            line.textContent = command.text;
+                        }
+                    } else {
+                        line.textContent = command.text;
+                    }
+                    
+                    terminalOutput.appendChild(line);
+                    scrollTerminalToInput();
+                    destroyIndex++;
+                    destroyChar = 0;
+                    setTimeout(typeDestroyCommand, 100 * TYPING_SPEED);
+                    return;
+                }
+
+                if (destroyChar === 0) {
+                    const line = document.createElement('div');
+                    line.className = 'terminal-line';
+                    if (command.class) line.classList.add(command.class);
+                    line.id = `destroy-line-${destroyIndex}`;
+                    terminalOutput.appendChild(line);
+                }
+
+                const line = document.getElementById(`destroy-line-${destroyIndex}`);
+                
+                if (destroyChar < command.text.length) {
+                    line.textContent += command.text[destroyChar];
+                    destroyChar++;
+                    scrollTerminalToInput();
+                    setTimeout(typeDestroyCommand, command.delay * TYPING_SPEED);
+                } else {
+                    destroyChar = 0;
+                    destroyIndex++;
+                    setTimeout(typeDestroyCommand, 300 * TYPING_SPEED);
+                }
+            }
+
+            typeDestroyCommand();
+        }
+
+        function executeDestroy() {
+            const destroyExecutionCommands = [
+                { text: '\naws_instance.portfolio_website: Destroying...', delay: 30 },
+                { text: '\naws_instance.portfolio_website: Still destroying... [10s elapsed]', delay: 30 },
+                { text: '\naws_instance.portfolio_website: Destruction complete after 11s', delay: 30, class: 'success' },
+                { text: '\n\nDestroy complete! Resources: 1 destroyed.', delay: 30, class: 'success' },
+                { text: '\n\n✓ Website successfully destroyed!', delay: 30, class: 'success' },
+                { text: '\n\nReloading infrastructure...', delay: 30, class: 'command' }
+            ];
+
+            let execIndex = 0;
+            let execChar = 0;
+
+            function typeExecCommand() {
+                if (execIndex >= destroyExecutionCommands.length) {
+                    // Clear localStorage and reload the page to start fresh
+                    localStorage.removeItem('portfolioApplied');
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1500 * TYPING_SPEED);
+                    return;
+                }
+
+                const command = destroyExecutionCommands[execIndex];
+                
+                if (command.instant === true) {
+                    const line = document.createElement('div');
+                    line.className = 'terminal-line';
+                    if (command.class) line.classList.add(command.class);
+                    line.textContent = command.text;
+                    terminalOutput.appendChild(line);
+                    scrollTerminalToInput();
+                    execIndex++;
+                    execChar = 0;
+                    setTimeout(typeExecCommand, 100 * TYPING_SPEED);
+                    return;
+                }
+                
+                if (execChar === 0) {
+                    const line = document.createElement('div');
+                    line.className = 'terminal-line';
+                    if (command.class) line.classList.add(command.class);
+                    line.id = `exec-line-${execIndex}`;
+                    terminalOutput.appendChild(line);
+                }
+
+                const line = document.getElementById(`exec-line-${execIndex}`);
+                
+                if (execChar < command.text.length) {
+                    line.textContent += command.text[execChar];
+                    execChar++;
+                    scrollTerminalToInput();
+                    setTimeout(typeExecCommand, command.delay * TYPING_SPEED);
+                } else {
+                    execChar = 0;
+                    execIndex++;
+                    setTimeout(typeExecCommand, 300 * TYPING_SPEED);
+                }
+            }
+
+            typeExecCommand();
+        }
     </script>
 </body>
 </html>
